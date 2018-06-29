@@ -96,7 +96,7 @@ select title, count(rental.rental_id) from film
 	inner join inventory on film.film_id = inventory.film_id
     inner join rental on inventory.inventory_id = rental.inventory_id
     group by title
-    order by count(rental.rental_id);
+    order by count(rental.rental_id) desc;
 #7f. Write a query to display how much business, in dollars, each store brought in.
 select store.store_id, sum(payment.amount) from store
 	inner join customer on store.store_id = customer.store_id
